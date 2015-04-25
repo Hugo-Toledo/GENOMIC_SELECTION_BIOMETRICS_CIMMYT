@@ -2,7 +2,7 @@
 # returns a BGData object
 # contact: gdeloscampos@gmail.com
 
-readGBS<-function( fileIn, rsCol,allelesCol,nColSkip,header=TRUE,
+readGBS.AGCT<-function( fileIn, rsCol,allelesCol,nColSkip,header=TRUE,
                    class='matrix',n=NULL,p=NULL,na.strings='N',returnData=TRUE,
                    verbose=TRUE,nChunks=NULL,vmode='byte',dimorder=1:2,
                    folderOut=paste('BGData_',sub("\\.[[:alnum:]]+$","",
@@ -86,3 +86,5 @@ readGBS<-function( fileIn, rsCol,allelesCol,nColSkip,header=TRUE,
         return(BGData)
     }
 }
+
+###
