@@ -105,22 +105,20 @@ readGBS<-function( fileIn,nColSkip,recode,header=TRUE,rsCol,sep,
         attr(BGData,'dateCreated')<-date()
         save(BGData,file=paste(folderOut,'/BGData.RData',sep=''))
     }
-    
+    if(returnData){
+        return(BGData)
+    }
+} 
     
    # Functions to get summaries. 
    summary_num<-function(x){
 	out=c(range(x),mean(is.na(x)),mean(x,na.rm=TRUE))
 	names(out)<-c('min','max','freq-NA','mean')
+	return(out)
    }
    summarySNPs<-function(X){
 	TMP<-t(apply(FUN=summary_num,MARGIN=2,X=X))
 	return(TMP)
   }
-
-    
-    if(returnData){
-        return(BGData)
-    }
-}
 
 ###
