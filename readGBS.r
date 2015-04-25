@@ -112,7 +112,7 @@ readGBS<-function( fileIn,nColSkip,recode,header=TRUE,rsCol,sep,
     
    # Functions to get summaries. 
    summary_num<-function(x){
-	out=c(range(x),mean(is.na(x)),mean(x,na.rm=TRUE))
+	out=c(range(x,na.rm=TRUE),mean(is.na(x)),mean(x,na.rm=TRUE))
 	names(out)<-c('min','max','freq-NA','mean')
 	return(out)
    }
