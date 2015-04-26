@@ -105,10 +105,11 @@ readGBS<-function( fileIn,nColSkip,recode,header=TRUE,rsCol,sep,
         attr(BGData,'dateCreated')<-date()
         save(BGData,file=paste(folderOut,'/BGData.RData',sep=''))
     }
+   
     if(returnData){
         return(BGData)
     }
-} 
+}
     
    # Functions to get summaries. 
    summary_num<-function(x){
